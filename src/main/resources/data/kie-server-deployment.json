@@ -1,0 +1,31 @@
+{
+	"apiVersion": "extensions/v1beta1",
+	"kind": "Deployment",
+	"metadata": {
+		"name": "origination-rules-server"
+	},
+	"spec": {
+		"replicas": 1,
+		"template": {
+			"metadata": {
+				"labels": {
+		      "name": "origination-rules-server"
+				}
+			},
+			"spec": {
+				"containers": [
+					{
+						"image": "jboss/kie-server:latest",
+						"name": "kie-server",
+						"ports": [
+							{
+								"name": "web",
+								"containerPort": 8080
+							}
+						]
+					}
+				]
+			}
+		}
+	}
+}

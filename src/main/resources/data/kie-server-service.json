@@ -1,0 +1,21 @@
+{
+	"apiVersion": "v1",
+	"kind": "Service",
+	"metadata": {
+		"labels": {
+			"name": "origination-rules-server"
+		},
+		"name": "origination-rules-server"
+	},
+	"spec": {
+		"ports": [
+			{
+				"port": 8080,
+				"targetPort": 8080
+			}
+		],
+		"selector": {
+			"name": "origination-rules-server"
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"apiVersion": "extensions/v1beta1",
+	"kind": "Deployment",
+	"metadata": {
+		"name": "origination-rules-workbench"
+	},
+	"spec": {
+		"replicas": 1,
+		"template": {
+			"metadata": {
+				"labels": {
+		      "name": "origination-rules-workbench"
+				}
+			},
+			"spec": {
+				"containers": [
+					{
+						"image": "jboss/drools-workbench:latest",
+						"name": "drools-wb",
+						"ports": [
+							{
+								"name": "web",
+								"containerPort": 8080
+							},
+							{
+								"name": "admin",
+								"containerPort": 8001
+							}
+						]
+					}
+				]
+			}
+		}
+	}
+}
